@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2018-2024 Jimmi Holst Christensen
+//
+// SPDX-License-Identifier: MIT
+
 const std = @import("std");
 
 const debug = std.debug;

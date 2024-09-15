@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2024 Caleb Depatie
+//
+// SPDX-License-Identifier: 0BSD
 .{
     .name = "zig-bench",
     .version = "0.1.0",

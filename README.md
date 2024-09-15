@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2018-2024 Jimmi Holst Christensen
+
+SPDX-License-Identifier: MIT
+-->
+
 # zig-bench
 
 A simple benchmarking lib in Zig
