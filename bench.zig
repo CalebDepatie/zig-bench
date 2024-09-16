@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2018-2024 Jimmi Holst Christensen
+// SPDX-FileCopyrightText: 2024 Caleb Depatie
 //
 // SPDX-License-Identifier: MIT
 

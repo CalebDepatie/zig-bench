@@ -1,28 +1,25 @@
 # SPDX-FileCopyrightText: 2018-2024 Jimmi Holst Christensen
+# SPDX-FileCopyrightText: 2024 Caleb Depatie 
 #
 # SPDX-License-Identifier: MIT
 
-name: CI
+name: Checks
 on:
   push:
-  pull_request:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        optimize: [Debug, ReleaseSafe, ReleaseFast, ReleaseSmall]
+  unit-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v18
         with:
-          submodules: recursive
-      - uses: goto-bus-stop/setup-zig@v2
+          nix_path: nixpkgs=channel:nixos-24.05
+      - uses: dx-oss/nix-shell-action@v11
         with:
-          version: master
-      - run: zig test bench.zig -O${{ matrix.optimize }}
+          script: |
+            zig build test
+  
   lint:
     runs-on: ubuntu-latest
     steps:
